@@ -1,0 +1,76 @@
+{% extends "shared/_layout.html" %}
+{% block header %}
+        <header class="py-5 bg-image-full" style="background-image: url('/static/img/hero.png'); background-size: 100%;">
+                <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="/static/img/SP.png" alt="..." />
+                <h1 class="text-black fs-3 fw-bolder">SuperPassword</h1>
+                <p class="text-black-50 mb-0">A Super Password Manager</p>
+                </div>
+        </header>
+{% endblock %}
+
+{% block main_content %}
+<div class="text">
+        <h1>The only password manager you'll ever need.</h1>
+</div>
+
+<div class="features">
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-4">
+                                <div class="feature">
+                                        <h2>Secure</h2>
+                                        <img class="img-fluid rounded-circle" src="/static/img/lock.jpg" alt="">
+                                        <p>The safest passwords that can be generated, stored on our secure server.</p>
+                                </div>
+                        </div>
+                        <div class="col-sm-4">
+                                <div class="feature">
+                                        <h2>Fast!</h2>
+                                        <img class="img-fluid" src="/static/img/rocket.png" alt="">
+                                        <p>Generate passwords in the blink of an eye.</p>
+                                </div>
+                        </div>
+                        <div class="col-sm-4">
+                                <div class="feature">
+                                        <h2>Convenient</h2>
+                                        <img class="img-fluid" src="/static/img/convenient.png" alt="">
+                                        <p>Just copy / paste passwords from the vault into your browser. Browser plugin coming soon!</p>
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-sm-4">
+                                <div class="feature">
+                                        <h2>Military Grade Crypto</h2>
+                                        <img class="img-fluid" src="/static/img/army.png" alt="">
+                                        <p>Only the strongest math!</p>
+                                </div>
+                        </div>
+                        <div class="col-sm-4">
+                                <div class="feature">
+                                        <h2>Very Random!</h2>
+                                        <img class="img-fluid" src="/static/img/random.png" alt="">
+                                        <p>Generated passwords are the most random.</p>
+                                </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                                <div class="feature">
+                                        <h2>Agile Developement</h2>
+                                        <img class="img-fluid" src="/static/img/agile.png" alt="">
+                                        <p>We test and redeploy our website constantly.</p>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+<div class="get-started">
+        <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4"><a class="btn btn-danger btn-block" href="/store">Get Started</a></div>
+                <div class="col-4"></div>
+        </div>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "shared/_layout.html" %}
+{% block main_content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="spacer30"></div>
+                <h1 class="vault-title">
+                    <img src="/static/img/vault.png" alt="vault" />
+                    Welcome to your vault
+                    <img src="/static/img/vault.png" alt="vault" />
+                </h1>
+                <div class="spacer30"></div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th scope="col" width="30%">Site</th>
+                            <th scope="col" width="30%">Username</th>
+                            <th scope="col" width="30%">Password</th>
+                        </tr>
+                    </thead>
+                    {%for p in passwords%}
+                        <tr class="password-row">
+                            <td>
+                                <a href="/store/delete?password_id={{ p[0] }}"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                            <td>{{ p[1] }}</td>
+                            <td>{{ p[2] }}</td>
+                            <td>{{ p[3] }}</td>
+                        </tr>
+
+                    {%endfor%}
+                            {% if not printable %}
+                        <tr class="add-password">
+                            <td colspan="4">
+                                <a class="btn btn-success" href="/store/export" target="_blank" rel="noopener noreferrer" style="visibility: none;">
+                                    <i class="fa-solid fa-file-export"></i> Export</a>
+
+                                    {% if passwords %}{% endif %}
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+                <div class="spacer30"></div>
+                <tr class="add-password">
+            <td colspan="4">
+                <form action="/store/add" method="post">
+                    Сайт:
+                    <input type="text" name="site">
+                    <br>
+                    Логин:
+                    <input type="text" name="username">
+                    <br>
+                    Пароль:
+                    <input type="text" name="password">
+                    <br><br>
+                    <input type="submit"
+                    hx-swap="beforebegin swap:.25s"
+                    hx-target=".add-password"
+                    class="fade-me-out btn btn-primary"
+                    name="add_password" value="Добавить">
+                </form>
+            </td>
+        </tr>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+{% endblock %}

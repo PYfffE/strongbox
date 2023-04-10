@@ -1,0 +1,1 @@
+getattr(app, '__name__', getattr(app.__class__, '__name__'))

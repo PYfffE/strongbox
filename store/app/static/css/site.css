@@ -1,0 +1,146 @@
+.title {
+    font-weight: bold;
+}
+
+.main_content {
+    padding: 20px;
+}
+
+.spacer30 {
+    padding: 30px;
+}
+
+nav {
+    background-color: #000;
+    padding: 10px;
+    font-size: 20px;
+}
+
+nav {
+    text-align: left;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    padding-right: 10px;
+}
+
+body {
+    background-color: #4B9CD3;
+    color: #1d1d1d;
+}
+
+.login-form{
+    background-color: white;
+    padding: 20px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+input {
+    margin: 10px;
+}
+
+.actions, h2 {
+    text-align: center;
+}
+
+.text>h1 {
+    text-align: center;
+    color: white;
+    padding: 50px;
+}
+
+.feature-container {
+    color: white;
+}
+
+.feature-container img {
+    padding: 30px;
+}
+
+.feature {
+    border: 1px solid rgb(255, 255, 255);
+    padding-top: 30px;
+    background-color: #740076;
+    min-height: 45px;
+    margin: 15px;
+    color: rgb(240, 240, 240);
+    border-radius: 15px;
+    text-align: center;
+    min-height: 520px;
+}
+
+.feature>h2, .feature>p {
+    padding: 10px;
+}
+
+.feature>img {
+    max-height: 300px;
+    padding: 20px 10px 20px 10px;
+}
+
+body {
+    font-family: 'Josefin Sans',sans-serif;
+}
+
+
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: white;
+    text-align: center;
+}
+
+.get-started {
+    text-align: center;
+    color: white;
+    padding: 50px;
+    padding-bottom: 100px;
+}
+
+.vault-title {
+    text-align: center;
+    color: #740076;
+    filter: drop-shadow(5px 5px 5px white)
+}
+
+.vault-title>img {
+    max-height: 50px;
+    padding-bottom: 10px;
+}
+
+.password-div {
+    text-align: center;
+    border: 1px solid gray;
+    padding: 5px;
+    background-color: white;
+}
+
+.error-msg {
+    color: #df0000;
+    padding-top: 10px;
+}
+
+.add-password {
+    text-align: center;
+}
+
+td>input {
+    width: 80%;
+    margin: 0;
+    border-radius: 5px;
+}
+
+td {
+    padding-top: 3px;
+}
+
+th {
+    filter: drop-shadow(2px 2px 3px white)
+}
