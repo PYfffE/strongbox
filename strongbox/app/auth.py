@@ -7,7 +7,6 @@ from hashlib import sha1
 def check_login(username, password):
     if check_user_exist(username):
         creds = get_user(username)
-        print(111111)
         if (username == creds[0]) and (sha1(password.encode()).hexdigest() == creds[1]):
             return True
     return "Incorrect login or password"

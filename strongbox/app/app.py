@@ -75,7 +75,6 @@ def register_routes():
             user = request.form['username']
             password = request.form['password']
             error = store.add_password(current_user, site, user, password)
-            print(error)
             if error == 0:
                 return redirect('/store')
             return error
