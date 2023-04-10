@@ -1,20 +1,18 @@
-<form action="/register" method="post">
-  <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
+{% extends "shared/_layout.html" %}
+{% block main_content %}
+    
+    <form class="login-form" action="" method="post">
+        <h2>Create your vault</h2>
+        <input class="form-control" type="text" name="username" placeholder="username" value="{{ username }}" required>
+        <input class="form-control" type="password" name="password" placeholder="password" required>
+        <div class="actions">
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <a href="/login" class="btn btn-secondary btn-block">Login</a>
+        </div>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Login" name="username" id="username" required>
+        {% if error %}
+            <div class='error-msg'>{{ error }}</div>
+        {% endif %}
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" required>E
-    <hr>
-
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
-
-  <div class="container signin">
-    <p>Already have an account? <a href="/login">Sign in</a>.</p>
-  </div>
-</form>
+    </form>
+{% endblock %}

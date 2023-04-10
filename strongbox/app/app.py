@@ -32,11 +32,11 @@ def register_routes():
         elif request.method == 'POST':
             username = request.form['username']
             password = request.form['password']
-            if auth.check_login(username, password):
+            if auth.check_login(username, password) == 0:
                 session['username'] = username
                 return redirect(url_for('store_view'))
             else:
-                return render_template('login.html')
+                return render_template('login.html', error='Wrong username or password')
 
     @app.route('/logout')
     def logout():
@@ -60,10 +60,10 @@ def register_routes():
             password = request.form['password']
             check = auth.check_register(username, password)
             if check == 0:
-                session['username'] = username
-                return redirect(url_for('store_view'))
+
+                return redirect(url_for('login_view'))
             else:
-                return check
+                return render_template('register.html', error=check)
         return 'Error'
 
     @app.route('/store/add', methods=['POST'])
