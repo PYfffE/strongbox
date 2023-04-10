@@ -1,7 +1,6 @@
 import flask
 from flask import render_template, redirect, request, url_for
 from flask import session
-from flask_login import login_required
 
 import auth
 from config import configs
@@ -121,5 +120,5 @@ def main():
     app.run(host='0.0.0.0', debug=True)
 
 
-if __name__ == '__main__':
+if (__name__ == '__main__') or (__name__ == 'app'):
     main()
