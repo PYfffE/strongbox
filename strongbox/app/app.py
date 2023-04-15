@@ -17,7 +17,8 @@ def enable_debug():
 
 def configure():
     app.config['SECRET_KEY'] = configs['SECRET_KEY']
-    enable_debug()
+    register_routes()
+    #enable_debug()
 
 
 def register_routes():
@@ -116,9 +117,9 @@ def register_routes():
 
 def main():
     configure()
-    register_routes()
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port = 5000, debug=False)
 
-
-if (__name__ == '__main__') or (__name__ == 'app'):
+if __name__ == '__main__':
     main()
+else:
+    configure()
