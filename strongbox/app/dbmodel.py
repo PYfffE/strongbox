@@ -4,14 +4,17 @@ import uuid
 import psycopg2
 from config import db_config
 
-conn = psycopg2.connect(database=db_config["database"],
-                        host=db_config["host"],
-                        user=db_config["user"],
-                        password=db_config["password"],
-                        port=db_config["port"])
+def get_db_connection():
+    conn = psycopg2.connect(database=db_config["database"],
+                            host=db_config["host"],
+                            user=db_config["user"],
+                            password=db_config["password"],
+                            port=db_config["port"])
+    return conn
 
 
 def add_user(username, password_hash):
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute("""INSERT INTO users
         (id, username, password)
@@ -23,6 +26,7 @@ def add_user(username, password_hash):
 
 
 def get_user(username):
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute("SELECT username, password FROM users WHERE username = %s", (username,))
     user = cur.fetchone()
@@ -31,6 +35,7 @@ def get_user(username):
 
 
 def get_passwords(username):
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute("SELECT id, site, username, password FROM stored_passwords WHERE username_id = %s", (username,))
     passwords = cur.fetchall()
@@ -39,6 +44,7 @@ def get_passwords(username):
 
 
 def check_user_exist(username):
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute(f"SELECT username FROM users WHERE username = %s", (username,))
     res = cur.fetchone()
@@ -49,6 +55,7 @@ def check_user_exist(username):
 
 
 def add_password(username_id, site, user, password):
+    conn = get_db_connection()
     cur = conn.cursor()
     password_id = str(uuid.uuid4())
     cur.execute("""INSERT INTO stored_passwords
@@ -61,6 +68,7 @@ def add_password(username_id, site, user, password):
 
 
 def del_password(password_id):
+    conn = get_db_connection()
     if password_id == 'deadbeef':
         return 1
     cur = conn.cursor()
