@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   postgres:
-    container_name: postgres_container
+    container_name: strongbox_postgres
     image: postgres:11.3-alpine
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
@@ -14,6 +14,7 @@ services:
       - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
   
   nginx:
+    container_name: strongbox_nginx
     build: ./nginx
     ports:
      - 31337:80
@@ -22,6 +23,7 @@ services:
     restart: unless-stopped
 
   flask-web:
+    container_name: strongbox_flask
     build: ./strongbox
     command: gunicorn --bind 0.0.0.0:5000 app:app
     environment:
