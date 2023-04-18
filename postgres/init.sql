@@ -23,4 +23,4 @@ INSERT INTO users
 INSERT INTO stored_passwords
 	(id, username_id, site, username, password)
 	VALUES
-	('deadbeef', 'admin', '192.168.1.1', 'admin', 'FLAG{RealFlag}')
+	('deadbeef', 'admin', 'http://192.168.1.1', 'cisco', 'cyber{d0n7_r3ly_0n_p455w0rd_m4n463r5}')

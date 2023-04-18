@@ -16,7 +16,7 @@ services:
   nginx:
     build: ./nginx
     ports:
-     - 80:80
+     - 31337:80
     depends_on:
     - flask-web
     restart: unless-stopped
